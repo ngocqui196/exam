@@ -49,6 +49,11 @@ public class CityController {
 
         return modelAndView;
     }
+    @GetMapping("/detail/{id}")
+    public ModelAndView showDetail(@PathVariable(value = "id") Long id) {
+        ModelAndView mav = new ModelAndView("/detail","city",iCityService.findById(id));
+        return mav;
+    }
 
     @GetMapping("/city")
     public ModelAndView listCity() {
@@ -66,17 +71,6 @@ public class CityController {
         City city = iCityService.findById(id);
         ModelAndView modelAndView = new ModelAndView("/edit","city", city);
         return modelAndView;
-
-
-//        if(city != null) {
-//            ModelAndView modelAndView = new ModelAndView("edit");
-//            modelAndView.addObject("city", city);
-//            return modelAndView;
-//
-//        }else {
-//            ModelAndView modelAndView = new ModelAndView("/error.404");
-//            return modelAndView;
-//        }
     }
 
     @PostMapping("/edit-city")

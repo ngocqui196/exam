@@ -8,7 +8,7 @@
     <h1>Delete city</h1>
     <h2>Are you sure?</h2>
 <p>
-    <a href="/citys">City list</a>
+    <a href="/city">City list</a>
 </p>
     <form th:action="@{/delete-city}" th:object="${city}" method="post">
         <input th:type="hidden" name="id" th:field="*{id}">

@@ -20,7 +20,9 @@
     </tr>
     <th:block th:each="city : ${city}">
         <tr>
-            <td th:text="${city.name}"></td>
+            <td>
+                <a th:href="@{/detail/__${city.getId()}__}" th:text="${city.name}"></a>
+            </td>
             <td th:text="${city.country.name}"></td>
             <td th:text="${city.area}"></td>
             <td th:text="${city.population}"></td>

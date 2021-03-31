@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="" th:object="${city}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Tên thành phố:</td>
+            <td th:text="${city.getName()}"></td>
+        </tr>
+        <tr>
+            <td>Tên quốc gia:</td>
+            <td th:text="${city.getCountry().getName()}"></td>
+        </tr>
+        <tr>
+            <td>Diện tích:</td>
+            <td th:text="${city.getArea()}"></td>
+        </tr>
+        <tr>
+            <td>Population:</td>
+            <td th:text="${city.getPopulation()}"></td>
+        </tr>
+        <tr>
+            <td>GDP:</td>
+            <td th:text="${city.getGDP()}"></td>
+        </tr>
+        <tr>
+            <td>THông tin chi tiết:</td>
+            <td th:text="${city.getCityDetail()}"></td>
+        </tr>
+        <tr>
+            <td><a th:href="@{/edit-city/__${city.getId()}__}">Edit</a>
+                <a th:href="@{/delete-city/__${city.getId()}__}">Delete</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button><a href="/city">Quay lại</a></button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
