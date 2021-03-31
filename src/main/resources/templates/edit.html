@@ -18,6 +18,8 @@
         <tr>
             <td>Name City:</td>
             <td><input type="text" th:field="*{name}"/></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+
         </tr>
 
         <tr>
@@ -29,18 +31,26 @@
         <tr>
             <td>Area:</td>
             <td><input type="text" th:field="*{area}"/></td>
+            <td th:if="${#fields.hasErrors('area')}" th:errors="*{area}"></td>
+
         </tr>
         <tr>
             <td>Population:</td>
             <td><input type="text" th:field="*{population}"/></td>
+            <td th:if="${#fields.hasErrors('population')}" th:errors="*{population}"></td>
+
         </tr>
         <tr>
             <td>GDP:</td>
             <td><input type="text" th:field="*{GDP}"/></td>
+            <td th:if="${#fields.hasErrors('GDP')}" th:errors="*{GDP}">Name Error</td>
+
         </tr>
         <tr>
             <td>Thông tin:</td>
             <td><textarea type="text" th:field="*{cityDetail}" rows="3" cols="22"/></td>
+            <td th:if="${#fields.hasErrors('cityDetail')}" th:errors="*{cityDetail}"></td>
+
         </tr>
         <tr>
             <td></td>
